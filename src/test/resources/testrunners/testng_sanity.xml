@@ -4,9 +4,20 @@
 <suite name="Opencart App Test Regression Suite" thread-count="1"
 	parallel="tests" verbose="4">
 
-
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.listeners.ExtentReportListener" />
+			
+		<listener
+			class-name="com.qa.opencart.listeners.TestAllureListener" />
+		
+		<!-- <listener
+			class-name="com.qa.opencart.listeners.AnnotationTransformer" /> -->
+				
+	</listeners>
 
 	<test name="Login Page Negative Test">
+	<parameter name="browser" value="edge" />
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageNegativeTest" />
 		</classes>
