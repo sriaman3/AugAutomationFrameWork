@@ -31,6 +31,7 @@ public class DriverFactory {
 
 		System.out.println("browser name is: " + browserName);
 		
+		//enable below if we want to select browser from jenkins or mvn command
 		//String browserName = System.getProperty("browser");
 		
 		optionsManager = new OptionsManager(prop);
