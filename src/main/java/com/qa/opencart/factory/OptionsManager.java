@@ -24,6 +24,10 @@ public class OptionsManager {
 			co.addArguments("--headless");
 		if(Boolean.parseBoolean(prop.getProperty("incognito").trim())) 
 			co.addArguments("--incognito");
+		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+			co.setCapability("browserName", "chrome");
+			//co.setCapability("enableVNC", true);	
+		}
 		return co;
 	}
 	
