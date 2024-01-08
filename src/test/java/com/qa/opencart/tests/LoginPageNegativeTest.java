@@ -24,7 +24,7 @@ public class LoginPageNegativeTest extends BaseTest{
 	@Test(dataProvider = "getData")
 	public void doLoginPageNegativeTest(String userName, String pwd) {
 		
-		Assert.assertFalse(loginPage.getLoginPageWarningMessage(userName, pwd).contains(AppConstants.LOGIN_PAGE_WARNING_MESSAGE));
+		Assert.assertTrue(loginPage.getLoginPageWarningMessage(userName, pwd).contains(AppConstants.LOGIN_PAGE_WARNING_MESSAGE));
 		
 	}
 

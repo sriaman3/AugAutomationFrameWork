@@ -426,7 +426,7 @@ public class ElementUtil {
 			System.out.println(titleFraction + " title value is not present....");
 			e.printStackTrace();
 		}
-		return null;
+		return driver.getTitle();
 
 	}
 
@@ -442,7 +442,7 @@ public class ElementUtil {
 			System.out.println(title + " title value is not present....");
 			e.printStackTrace();
 		}
-		return null;
+		return  driver.getTitle();
 
 	}
 
@@ -458,7 +458,7 @@ public class ElementUtil {
 			System.out.println(urlFraction + " url value is not present....");
 			e.printStackTrace();
 		}
-		return null;
+		return driver.getCurrentUrl();
 
 	}
 
@@ -473,7 +473,7 @@ public class ElementUtil {
 			System.out.println(url + " url value is not present....");
 			e.printStackTrace();
 		}
-		return null;
+		return driver.getCurrentUrl();
 
 	}
 
