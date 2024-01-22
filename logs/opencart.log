@@ -1,0 +1,12 @@
+2024-01-22 15:02:19 WARN  DriverFactory:144 - your env is null...hence running tests on QA env...
+2024-01-22 15:02:19 INFO  DriverFactory:39 - browser name is:edge
+2024-01-22 15:02:24 INFO  LoginPage:42 - login page title:Account Login
+2024-01-22 15:02:24 INFO  LoginPageTest:33 - actual login page title: Account Login
+2024-01-22 15:02:24 INFO  LoginPage:50 - login page url:https://naveenautomationlabs.com/opencart/index.php?route=account/login
+2024-01-22 15:02:25 INFO  LoginPage:66 - creds are : augbatch2023@opencart.com : Selenium@12345
+2024-01-22 15:02:57 WARN  DriverFactory:144 - your env is null...hence running tests on QA env...
+2024-01-22 15:02:57 INFO  DriverFactory:39 - browser name is:edge
+2024-01-22 15:03:01 INFO  LoginPage:42 - login page title:Account Login
+2024-01-22 15:03:01 INFO  LoginPageTest:33 - actual login page title: Account Login
+2024-01-22 15:03:02 INFO  LoginPage:50 - login page url:https://naveenautomationlabs.com/opencart/index.php?route=account/login
+2024-01-22 15:03:02 INFO  LoginPage:66 - creds are : augbatch2023@opencart.com : Selenium@12345

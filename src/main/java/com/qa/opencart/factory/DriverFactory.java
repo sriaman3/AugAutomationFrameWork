@@ -8,6 +8,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -27,12 +29,14 @@ public class DriverFactory {
 	OptionsManager optionsManager;
 	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
+	private static final Logger log = LogManager.getLogger(DriverFactory.class);
 
 	public WebDriver initDriver(Properties prop) {
 
 		String browserName = prop.getProperty("browser");
 
 		System.out.println("browser name is: " + browserName);
+		log.info("browser name is:" + browserName);
 		
 		//enable below if we want to select browser from jenkins or mvn command
 		//String browserName = System.getProperty("browser");
@@ -41,7 +45,7 @@ public class DriverFactory {
 
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":
-
+			log.info("Running it on chrome browser....");
 			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
 				// run it on grid:
 				initRemoteDriver(browserName);
@@ -76,6 +80,7 @@ public class DriverFactory {
 
 		default:
 			System.out.println("please pass the right browser name...." + browserName);
+			log.warn("please pass the right browser name...."+ browserName);
 			throw new FrameworkException("No Browser Found...");
 		}
 
@@ -136,6 +141,7 @@ public class DriverFactory {
 			try {
 				if (envName == null) {
 					System.out.println("your env is null...hence running tests on QA env...");
+					log.warn("your env is null...hence running tests on QA env...");
 					ip = new FileInputStream("./src/test/resources/config/config.qa.properties");
 				}
 
@@ -159,6 +165,7 @@ public class DriverFactory {
 
 					default:
 						System.out.println("please pass the right env name..." + envName);
+						log.error("wrong env name : " + envName);
 						throw new FrameworkException("Wrong Env Name: " + envName);
 					}
 				}
